@@ -1,0 +1,398 @@
+.copilotContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 56px);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  background-color: #090d13;
+  color: #e6edf3;
+  padding: 16px 20px;
+  gap: 14px;
+}
+
+/* Header */
+.copilotHeaderBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #21262d;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.brandIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  color: #58a6ff;
+  flex-shrink: 0;
+}
+
+.headerMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.headerTitle {
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.modelBadge {
+  font-size: 10px;
+  font-weight: 500;
+  background: rgba(56, 139, 253, 0.15);
+  color: #58a6ff;
+  border: 1px solid rgba(56, 139, 253, 0.3);
+  padding: 2px 7px;
+  border-radius: 12px;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+.targetBreadcrumb {
+  font-size: 12px;
+  color: #8b949e;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.targetBreadcrumb strong {
+  color: #e6edf3;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.backBtn:hover {
+  background: #21262d;
+  border-color: #58a6ff;
+  color: #ffffff;
+}
+
+/* Telemetry Strip */
+.telemetryStrip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 12px;
+}
+
+.telemetryItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #8b949e;
+}
+
+.telemetryItem strong {
+  color: #e6edf3;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+.statusIndicator {
+  font-size: 11px;
+  color: #3fb950;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Progress bar */
+.progressContainer {
+  width: 100%;
+  height: 3px;
+  background: #21262d;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background: #58a6ff;
+  transition: width 0.2s ease;
+}
+
+/* Error */
+.errorAlert {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(248, 81, 73, 0.1);
+  border: 1px solid rgba(248, 81, 73, 0.4);
+  color: #f85149;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+/* Main Workbench Grid: Responsive Flex/Grid */
+.remediationGrid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 14px;
+  flex: 1;
+  min-height: 0;
+}
+
+.contextCard, .patchCard {
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.sectionHeaderRow, .patchHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 8px;
+}
+
+.cardSectionTitle {
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: #e6edf3;
+}
+
+.modeToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+.threatPill {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.threatWarn {
+  background: rgba(210, 153, 34, 0.15);
+  color: #d29922;
+  border: 1px solid rgba(210, 153, 34, 0.3);
+}
+
+.threatClean {
+  background: rgba(63, 185, 80, 0.15);
+  color: #3fb950;
+  border: 1px solid rgba(63, 185, 80, 0.3);
+}
+
+.codeSnippetPreview {
+  background: #090d13;
+  border: 1px solid #21262d;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 11px;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  color: #c9d1d9;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 180px;
+  margin-bottom: 12px;
+}
+
+.synthesizeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #238636;
+  border: 1px solid #2ea043;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  width: 100%;
+}
+
+.synthesizeBtn:hover:not(:disabled) {
+  background: #2ea043;
+}
+
+.synthesizeBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinIcon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.causeBox {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #21262d;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.causeText {
+  font-size: 12px;
+  color: #8b949e;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cveBadge {
+  font-size: 10px;
+  color: #58a6ff;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  background: rgba(56, 139, 253, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.copyBtn, .iconActionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.copyBtn:hover, .iconActionBtn:hover {
+  background: #21262d;
+  color: #ffffff;
+}
+
+.codeArea {
+  flex: 1;
+  background: #090d13;
+  border: 1px solid #21262d;
+  border-radius: 6px;
+  padding: 14px;
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  color: #a5d6ff;
+  line-height: 1.55;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  min-height: 250px;
+}
+
+/* ===================================================================
+   RESPONSIVE BREAKPOINTS (Mobile, Tablet, Laptop)
+   =================================================================== */
+
+/* Tablets and small laptops (<= 1024px) */
+@media (max-width: 1024px) {
+  .remediationGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+}
+
+/* Mobile Screens (<= 640px) */
+@media (max-width: 640px) {
+  .copilotContainer {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .copilotHeaderBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .headerRight {
+    justify-content: flex-end;
+  }
+
+  .telemetryStrip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .telemetryItem[style*="margin-left: auto"] {
+    margin-left: 0 !important;
+  }
+
+  .codeArea {
+    min-height: 200px;
+    font-size: 11px;
+  }
+}

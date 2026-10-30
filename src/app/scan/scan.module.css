@@ -1,0 +1,410 @@
+@keyframes notionBlink {
+  0%, 92%, 100% {
+    transform: scaleY(1);
+  }
+  96% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.cockpitContainer {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 24px 96px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  box-sizing: border-box;
+}
+
+/* Notion-Style Breadcrumb Navigation */
+.breadcrumbRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #8a8a8a;
+}
+
+.breadcrumbLink {
+  color: #8a8a8a;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.breadcrumbLink:hover {
+  color: #d4d4d4;
+}
+
+.breadcrumbSlash {
+  color: #444444;
+}
+
+/* Notion Page Header */
+.pageHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Notion Hand-Drawn Ink Sketch Mascot */
+.mascotHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.inkDoodleWrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  background-color: #252525;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: gentleFloat 5s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.inkDoodleSvg {
+  width: 38px;
+  height: 38px;
+}
+
+.eyePupil {
+  transition: transform 0.08s ease-out;
+}
+
+.eyeLid {
+  transform-origin: 20px 20px;
+  animation: notionBlink 5s ease-in-out infinite;
+}
+
+.titleArea {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pageTitle {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin: 0;
+}
+
+.pageDescription {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #9b9b9b;
+  margin: 0;
+}
+
+/* Notion Workspace Quick Find / Ingestion Bar */
+.notionSearchCard {
+  background-color: #202020;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+.tabBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 12px;
+}
+
+.tabGroup {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tabItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: none;
+  background: transparent;
+  color: #8a8a8a;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.tabItem:hover {
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+.tabItemActive {
+  background-color: #2e2e2e;
+  color: #ffffff;
+}
+
+.patAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #7a7a7a;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.patAction:hover {
+  color: #cfcfcf;
+}
+
+.searchRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.inputBox {
+  flex: 1;
+  height: 42px;
+  background-color: #191919;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 0 14px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 13px;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.15s ease;
+  box-sizing: border-box;
+}
+
+.inputBox:focus {
+  border-color: #555555;
+}
+
+.inputBox::placeholder {
+  color: #555555;
+}
+
+.runBtn {
+  height: 42px;
+  padding: 0 18px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  color: #111111;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.runBtn:hover {
+  background-color: #e5e5e5;
+  transform: translateY(-1px);
+}
+
+.rawArea {
+  width: 100%;
+  min-height: 160px;
+  background-color: #191919;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #cccccc;
+  outline: none;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.rawArea:focus {
+  border-color: #555555;
+}
+
+.patDrawer {
+  background-color: #1c1c1c;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.patInput {
+  height: 34px;
+  background-color: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 0 10px;
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  color: #ffffff;
+  outline: none;
+}
+
+/* Notion Database Table View (Hardware Telemetry) */
+.databaseSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #7a7a7a;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.propertiesRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.propertyCard {
+  background-color: #202020;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.propertyLabel {
+  font-size: 11px;
+  color: #7a7a7a;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.notionTag {
+  align-self: flex-start;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.tagGray {
+  background-color: #2b2b2b;
+  color: #d4d4d4;
+}
+
+.tagSage {
+  background-color: #223229;
+  color: #85d09b;
+}
+
+.tagAmber {
+  background-color: #342a1d;
+  color: #e6b876;
+}
+
+/* Notion Database Rows (Quick Presets) */
+.presetList {
+  display: flex;
+  flex-direction: column;
+  background-color: #202020;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.presetRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background-color 0.15s ease;
+}
+
+.presetRow:last-child {
+  border-bottom: none;
+}
+
+.presetRow:hover {
+  background-color: #262626;
+}
+
+.presetTitleArea {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fileIcon {
+  color: #7a7a7a;
+}
+
+.presetName {
+  font-family: ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.presetDesc {
+  font-size: 12px;
+  color: #7a7a7a;
+}
+
+@media (max-width: 768px) {
+  .propertiesRow {
+    grid-template-columns: 1fr;
+  }
+  .searchRow {
+    flex-direction: column;
+  }
+  .runBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,231 @@
+.drawerRoot {
+  width: 100%;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawerHeader {
+  height: 44px;
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-default);
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s ease;
+}
+
+.drawerHeader:hover {
+  background-color: var(--bg-hover);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modelBadge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: rgba(35, 134, 54, 0.15);
+  border: 1px solid rgba(35, 134, 54, 0.4);
+  color: #3fb950;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.badgePulse {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #3fb950;
+  box-shadow: 0 0 6px #3fb950;
+}
+
+.drawerTitle {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.toggleIcon {
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+}
+
+.iconRotated {
+  transform: rotate(180deg);
+}
+
+.drawerBody {
+  padding: 20px;
+  background-color: var(--bg-inset);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Control and Dispatch Bar */
+.controlRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-muted);
+}
+
+.modelMeta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.generateBtn {
+  height: 32px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 0 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.generateBtn:hover:not(:disabled) {
+  border-color: var(--border-active);
+  background-color: var(--bg-hover);
+}
+
+.generateBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Analysis Layout Panes */
+.analysisGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.analysisPane {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.paneTitle {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.causeText {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.cveBox {
+  margin-top: 6px;
+  padding: 8px 10px;
+  background-color: var(--color-danger-subtle);
+  border: 1px solid rgba(248, 81, 73, 0.3);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-danger);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.codePatchBlock {
+  background-color: var(--bg-canvas);
+  border: 1px solid var(--border-default);
+  border-radius: 4px;
+  padding: 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.5;
+  color: #79c0ff;
+  overflow-x: auto;
+  white-space: pre;
+  margin: 0;
+}
+
+.copyPatchBtn {
+  align-self: flex-start;
+  height: 28px;
+  background-color: var(--bg-hover);
+  border: 1px solid var(--border-default);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 0 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.15s ease;
+}
+
+.copyPatchBtn:hover {
+  background-color: #30363d;
+}
+
+@media (max-width: 860px) {
+  .analysisGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,13 @@
+# PR-XRay: Client-Side SAST Security Engine
+> Autonomous static application security testing platform running 100% locally in browser memory via WebGPU and WebAssembly.
+
+## Overview
+- Developer: OnePersonAI Systems Lab (Akshat Raj)
+- Canonical URL: https://pr-xray.onepersonai.in
+- Core Features: Zero-data-ingestion AST taint analysis, Shannon entropy secret scanning, local neural patch synthesis.
+- Performance: Single-threaded and SIMD Wasm fallback with direct WebGPU hardware acceleration.
+
+## Use Cases
+- SAST Code Auditing
+- API Key and Secret Leak Prevention
+- Pull Request Automated Review

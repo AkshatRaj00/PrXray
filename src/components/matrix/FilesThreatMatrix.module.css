@@ -1,0 +1,216 @@
+.matrixRoot {
+  width: 100%;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 16px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.matrixHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.titleArea {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.matrixTitle {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.countBadge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 1px 6px;
+  background-color: var(--bg-inset);
+  border: 1px solid var(--border-muted);
+  border-radius: 10px;
+  color: var(--text-secondary);
+}
+
+.legendArea {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dotDanger {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-danger);
+}
+
+.dotWarning {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-warning);
+}
+
+.dotClean {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-success);
+}
+
+/* Files Grid Container */
+.gridScroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  width: 100%;
+}
+
+.fileChip {
+  background-color: var(--bg-canvas);
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  padding: 8px 12px;
+  min-width: 210px;
+  max-width: 260px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.fileChip:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--border-active);
+}
+
+.chipSelected {
+  background-color: var(--bg-hover);
+  border-color: var(--border-active);
+  box-shadow: 0 0 0 1px var(--border-active);
+}
+
+.chipTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.fileName {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.statusTag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 4px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.tagAdded {
+  color: var(--color-success);
+  background-color: rgba(35, 134, 54, 0.15);
+}
+
+.tagModified {
+  color: var(--color-info);
+  background-color: rgba(31, 111, 235, 0.15);
+}
+
+.tagDeleted {
+  color: var(--color-danger);
+  background-color: var(--color-danger-subtle);
+}
+
+.chipBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.diffStats {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.statAdd {
+  color: var(--color-success);
+}
+
+.statDel {
+  color: var(--color-danger);
+}
+
+.threatBadgeGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.threatFlag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.threatCritical {
+  color: var(--color-danger);
+}
+
+.threatWarning {
+  color: var(--color-warning);
+}
+
+.threatClean {
+  color: var(--color-success);
+}
+
+@media (max-width: 640px) {
+  .matrixRoot {
+    padding: 12px 14px;
+  }
+  .legendArea {
+    display: none;
+  }
+}

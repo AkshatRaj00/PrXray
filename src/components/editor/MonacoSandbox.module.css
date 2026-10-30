@@ -1,0 +1,140 @@
+.sandboxContainer {
+  width: 100%;
+  height: 100%;
+  min-height: 580px;
+  display: flex;
+  flex-direction: column;
+  background-color: #0d1117;
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.editorHeader {
+  height: 42px;
+  background-color: #161b22;
+  border-bottom: 1px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.fileBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.diffStat {
+  font-size: 11px;
+}
+
+.diffStatGreen {
+  color: #3fb950;
+}
+
+.diffStatRed {
+  color: #f85149;
+}
+
+.editorViewport {
+  flex: 1;
+  width: 100%;
+  height: calc(100% - 42px);
+  min-height: 538px;
+  position: relative;
+  background-color: #090d13;
+}
+
+/* Fallback Native High-Performance Diff Viewer */
+.nativeDiffViewer {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 12px 0;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+.diffRow {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  padding: 1px 0;
+}
+
+.diffRow:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.lineNum {
+  width: 48px;
+  padding: 0 10px;
+  text-align: right;
+  color: #484f58;
+  user-select: none;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.lineIndicator {
+  width: 20px;
+  text-align: center;
+  user-select: none;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.lineText {
+  flex: 1;
+  white-space: pre-wrap;
+  word-break: break-all;
+  padding-right: 16px;
+  color: #c9d1d9;
+}
+
+/* Line Variants */
+.rowAdded {
+  background-color: rgba(46, 160, 67, 0.15);
+}
+
+.rowAdded .lineIndicator,
+.rowAdded .lineText {
+  color: #7ee787;
+}
+
+.rowDeleted {
+  background-color: rgba(248, 81, 73, 0.15);
+}
+
+.rowDeleted .lineIndicator,
+.rowDeleted .lineText {
+  color: #ffa198;
+}
+
+.rowFlagged {
+  background-color: rgba(248, 81, 73, 0.28) !important;
+  border-left: 3px solid #f85149;
+}
+
+.findingBanner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 16px 4px 68px;
+  padding: 6px 12px;
+  background-color: #281014;
+  border: 1px solid #da3633;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #ff7b72;
+}

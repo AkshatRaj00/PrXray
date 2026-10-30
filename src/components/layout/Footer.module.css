@@ -1,0 +1,111 @@
+.footerContainer {
+  width: 100%;
+  border-top: 1px solid var(--border-default);
+  background-color: var(--bg-canvas);
+  padding: 24px 24px 32px 24px;
+  box-sizing: border-box;
+  margin-top: auto;
+}
+
+.footerContent {
+  max-width: 1680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.brandInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brandTag {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-muted);
+  color: var(--text-secondary);
+}
+
+.socialRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.socialLink {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.socialLink:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--color-info);
+  transform: translateY(-1px);
+}
+
+.emailPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 6px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.emailPill:hover {
+  background-color: var(--bg-hover);
+  color: var(--color-info);
+  border-color: var(--color-info);
+  transform: translateY(-1px);
+}
+
+.bottomDisclaimer {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  border-top: 1px dashed var(--border-muted);
+  padding-top: 14px;
+  margin: 0;
+}
