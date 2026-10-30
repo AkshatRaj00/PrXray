@@ -9,7 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@huggingface/transformers": "^3.3.3",
+    "@huggingface/transformers": "^4.3.1",
     "@monaco-editor/react": "^4.7.0",
     "comlink": "^4.4.2",
     "lucide-react": "^1.65.0",
