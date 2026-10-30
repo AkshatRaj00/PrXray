@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { SentinelProvider } from '@/lib/state/sentinelContext';
-import { Navbar } from '@/components/Navbar';
-import { Footer } from '@/components/Footer';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
 
 export const viewport: Viewport = {
   themeColor: '#090d13',
@@ -130,7 +130,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <SentinelProvider>
-          <Navbar />
+          <Header />
           <main style={{ flex: 1 }}>
             {children}
           </main>
