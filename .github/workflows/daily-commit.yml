@@ -1,0 +1,42 @@
+name: Sentinel Automated Daily Health Sync
+
+on:
+  schedule:
+    # Runs daily at 00:00 UTC (05:30 AM IST)
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub UI anytime
+
+permissions:
+  contents: write
+
+jobs:
+  daily-pulse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python Runtime
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Execute Sentinel Invariant Pulse
+        run: |
+          python scripts/daily_pulse.py
+
+      - name: Commit and Push Daily Sentinel Pulse
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/sentinel-heartbeat.json
+          
+          # Only commit if heartbeat was modified
+          if git diff --staged --quiet; then
+            echo "No state changes to commit."
+          else
+            git commit -m "chore(sentinel): synchronize automated invariant rules and health telemetry [skip ci]"
+            git push origin main
+          fi
