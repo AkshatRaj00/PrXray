@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { SentinelProvider } from '@/lib/state/sentinelContext';
+import { Navbar } from '@/components/Navbar';
+import { Footer } from '@/components/Footer';
 
 export const viewport: Viewport = {
   themeColor: '#090d13',
@@ -76,29 +78,30 @@ export const metadata: Metadata = {
   },
 };
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    name: 'PR-XRay',
-    operatingSystem: 'Any (Web Browser)',
-    applicationCategory: 'SecurityApplication',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
-    },
-    author: {
-      '@type': 'Person',
-      name: 'Akshat Raj',
-      url: 'https://github.com/AkshatRaj00',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'OnePersonAI',
-      url: 'https://onepersonai.in',
-    },
-    description: 'In-browser zero-data-ingestion SAST security platform. Performs real-time Shannon entropy secret scanning and AST analysis using WebGPU.',
-  };
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'PR-XRay',
+  operatingSystem: 'Any (Web Browser)',
+  applicationCategory: 'SecurityApplication',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
+  author: {
+    '@type': 'Person',
+    name: 'Akshat Raj',
+    url: 'https://github.com/AkshatRaj00',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'OnePersonAI',
+    url: 'https://onepersonai.in',
+  },
+  description: 'In-browser zero-data-ingestion SAST security platform. Performs real-time Shannon entropy secret scanning and AST analysis using WebGPU.',
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -118,11 +121,20 @@ export default function RootLayout({
           color: '#e6edf3',
           fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
           minHeight: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <SentinelProvider>
-          {children}
+          <Navbar />
+          <main style={{ flex: 1 }}>
+            {children}
+          </main>
+          <Footer />
         </SentinelProvider>
       </body>
     </html>
