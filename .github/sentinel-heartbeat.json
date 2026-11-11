@@ -1,12 +1,9 @@
 {
-  "engine": "PR-XRay Sentinel Gatekeeper",
-  "status": "OPERATIONAL",
-  "last_sync_utc": "2026-11-10T06:10:22.288566+00:00",
-  "ast_rule_version": "2026.4.1",
-  "telemetry_signature": "9b74a6a611549bedf0450ba38ccf849f55e3a086a23551490789cd691e76f5d8",
-  "worker_health": {
-    "webgpu_adapter": "ready",
-    "shannon_entropy_gate": "active",
-    "ast_taint_checker": "active"
-  }
+  "engine": "PR-XRay Autonomous Sentinel",
+  "status": "HEALTHY",
+  "last_verified_utc": "2026-11-11T04:46:39Z",
+  "commit_sha": "1f57528f4b4887be57248bad2d9d2c42df952b33",
+  "environment": "Production V8 Wasm SIMD128",
+  "maintainer": "OnePersonAI Systems Lab",
+  "verified_by": "github-actions[bot]"
 }
