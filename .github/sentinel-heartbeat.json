@@ -1,9 +1,9 @@
 {
   "engine": "PR-XRay Sentinel Gatekeeper",
   "status": "OPERATIONAL",
-  "last_sync_utc": "2026-11-27T06:58:49.990152+00:00",
+  "last_sync_utc": "2026-11-28T06:33:44.226472+00:00",
   "ast_rule_version": "2026.4.1",
-  "telemetry_signature": "4536970c206c7b59c9a0a26825375754b805fb58bdeea681dd0f4da327d33f45",
+  "telemetry_signature": "7b20bfc7e65865c70905bbedbf5d28223ae1685efb604562d8c84c7b2d80ace9",
   "worker_health": {
     "webgpu_adapter": "ready",
     "shannon_entropy_gate": "active",
